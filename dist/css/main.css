@@ -40,14 +40,14 @@
   .menu-nav {
     margin: 0;
     padding: 0;
-    background: #373737;
+    background: #121a28;
     list-style: none;
     transform: translate3d(0, -100%, 0);
     transition: all 0.5s ease-out; }
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
   .menu-branding {
-    background: #444;
+    background: #1a253a;
     transform: translate3d(0, 100%, 0);
     transition: all 0.5s ease-out; }
     .menu-branding.show {
@@ -114,8 +114,8 @@
     transform: translate3d(100%, 0, 0); }
     .menu-branding .portait {
       background: url("../img/portrait_smaller.jpg");
-      width: 75px;
-      height: 75px; } }
+      width: 45px;
+      height: 45px; } }
 
 @media screen and (max-width: 500px) {
   main#home h1 {
@@ -125,7 +125,7 @@
   box-sizing: border-box; }
 
 body {
-  background: #444;
+  background: #1a253a;
   color: #fff;
   height: 100%;
   margin: 0;
@@ -143,7 +143,7 @@ body {
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: rgba(68, 68, 68, 0.9); }
+      background: rgba(26, 37, 58, 0.9); }
 
 h1,
 h2,
@@ -159,7 +159,7 @@ h3 {
   h3.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(73, 73, 73, 0.5); }
+    background: rgba(29, 41, 65, 0.5); }
 
 a {
   color: #fff;
