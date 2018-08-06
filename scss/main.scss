@@ -177,4 +177,56 @@ main {
   height: 60px;
 }
 
+.portfolio-modal {
+  position: fixed;
+  max-width: 600px;
+  z-index: 10;
+  top: 2em;
+  bottom: 2em;
+  left: 2em;
+  right: 2em;
+  background: white;
+  box-shadow: 0 0 0 3em rgba(black, 0.5);
+  overflow-y: scroll;
+
+  display: none;
+  &.is-open {
+    display: block;
+  }
+}
+
+.modal-close {
+  background: white;
+  position: fixed;
+  left: 1em;
+  top: 1em;
+  border: 0;
+  width: 2em;
+  height: 2em;
+  padding: 4px 0 0;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(black, 0.5);
+}
+
+.portfolio-content {
+  text-align: left;
+  color: black;
+  padding: 1em 1em 1em 1em;
+}
+
+.portfolio-full-width {
+}
+
+.portfolio-content-title {
+  font-size: 1.5em;
+}
+
+@media (min-width: 40em) {
+  .prtfolio-full-width {
+    width: 65%;
+    //margin: 2em;
+  }
+}
+
 @import "mobile";
