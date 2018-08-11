@@ -184,10 +184,9 @@ main {
 .projects {
   display: grid;
   grid-gap: 0.7rem;
-  grid-template-columns: repeat(3, 1fr); }
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
   .projects img {
     width: 100%;
-    height: 75%;
     border: 3px #fff solid; }
 
 .textOverImage {
@@ -223,9 +222,9 @@ main {
   background-color: rgba(0, 0, 0, 0.7); }
 
 .textOverImage:first-line {
-  color: #fff;
+  color: #e76262;
   font-weight: bold;
-  font-size: 1.5em; }
+  font-size: 2.5em; }
 
 .boxes {
   display: flex;
