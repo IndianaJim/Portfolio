@@ -115,16 +115,18 @@ main {
 .projects {
   display: grid;
   grid-gap: 0.7rem;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "project-card project-card";
+  grid-template-columns: 1fr;
+  grid-template-areas: "project-card";
+  min-width: 300px;
 }
 
 .project-card {
   display: grid;
-  grid-gap: 0.7rem;
+  grid-gap: 0.6rem;
   grid-template-columns: 1fr;
   grid-template-areas:
     "project-img"
+    "content"
     "btn-light"
     "btn-dark";
 }
@@ -133,14 +135,24 @@ main {
   grid-area: project-img;
   max-width: 100%;
 }
+
+.card-content {
+  grid-area: content;
+  text-align: left;
+  background: lighten($primary-color, 15);
+  padding: 0.2em;
+
+  .card-title {
+    text-align: left;
+    font-weight: bold;
+  }
+}
+
 //text over project image
 .textOverImage {
   grid-area: textOverImage;
   width: 100%;
   max-width: 100%;
-  //margin: 4px;
-
-  //transition: 0.5s;
 }
 
 .textOverImage:hover {
@@ -208,13 +220,14 @@ main {
   @extend .btn;
   background: darken($primary-color, 50);
   color: #fff;
+  margin-bottom: 19px;
 }
 
 .btn-light {
   grid-area: btn-light;
   @extend .btn;
   background: lighten($primary-color, 50);
-  color: #333;
+  color: black;
 }
 
 #main-footer {
