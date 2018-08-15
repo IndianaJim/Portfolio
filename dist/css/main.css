@@ -186,7 +186,7 @@ main {
   grid-gap: 0.7rem;
   grid-template-columns: 1fr;
   grid-template-areas: "project-card";
-  min-width: 300px; }
+  min-width: 250px; }
 
 .project-card {
   display: grid;
@@ -286,7 +286,7 @@ main {
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   .projects {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: 1fr 1fr; } }
 
 @media screen and (max-width: 768px) {
   main {
