@@ -189,14 +189,18 @@ main {
 
 .project-card {
   display: grid;
+  grid-gap: 0.7rem;
   grid-template-columns: 1fr;
-  grid-template-areas: "textOverImage" "btn-light" "btn-dark"; }
+  grid-template-areas: "project-img" "btn-light" "btn-dark"; }
+
+.project-img {
+  grid-area: project-img;
+  max-width: 100%; }
 
 .textOverImage {
   grid-area: textOverImage;
   width: 100%;
-  max-width: 100%;
-  margin: 4px; }
+  max-width: 100%; }
 
 .textOverImage:hover {
   background-color: rgba(0, 0, 0, 0.6); }
