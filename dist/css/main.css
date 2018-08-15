@@ -184,23 +184,22 @@ main {
 .projects {
   display: grid;
   grid-gap: 0.7rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-  .projects img {
-    width: 100%;
-    border: 3px #fff solid; }
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "project-card project-card"; }
+
+.project-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "textOverImage" "btn-light" "btn-dark"; }
 
 .textOverImage {
-  position: relative;
+  grid-area: textOverImage;
   width: 100%;
-  height: 100%;
-  float: left;
-  margin: 4px;
-  background-size: 100%;
-  background-position: center;
-  transition: 0.5s; }
+  max-width: 100%;
+  margin: 4px; }
 
 .textOverImage:hover {
-  background-size: 110%; }
+  background-color: rgba(0, 0, 0, 0.6); }
 
 .textOverImage:after {
   position: absolute;
@@ -224,7 +223,7 @@ main {
 .textOverImage:first-line {
   color: #fff;
   font-weight: bold;
-  font-size: 2.5em; }
+  font-size: 1.5em; }
 
 .boxes {
   display: flex;
@@ -248,10 +247,12 @@ main {
     color: #000; }
 
 .btn-dark {
+  grid-area: btn-dark;
   background: black;
   color: #fff; }
 
 .btn-light {
+  grid-area: btn-light;
   background: #a6b1c1;
   color: #333; }
 

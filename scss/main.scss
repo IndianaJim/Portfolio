@@ -115,36 +115,31 @@ main {
 .projects {
   display: grid;
   grid-gap: 0.7rem;
-  //grid-template-columns: repeat(3, 1fr);
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "project-card project-card";
+}
 
-  img {
-    width: 100%;
-    //height: 85%;
-    border: 3px #fff solid;
-
-    // &:hover {
-    //   opacity: 0.5;
-    //   border-color: $secondary-color;
-    //   @include easeOut;
-    // }
-  }
+.project-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "textOverImage"
+    "btn-light"
+    "btn-dark";
 }
 
 //text over project image
 .textOverImage {
-  position: relative;
+  grid-area: textOverImage;
   width: 100%;
-  height: 100%;
-  float: left;
+  max-width: 100%;
   margin: 4px;
-  background-size: 100%;
-  background-position: center;
-  transition: 0.5s;
+
+  //transition: 0.5s;
 }
 
 .textOverImage:hover {
-  background-size: 110%;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .textOverImage:after {
@@ -166,14 +161,13 @@ main {
   top: 0;
   padding: 8px;
   background-color: rgba(0, 0, 0, 0.7);
-
 }
 
 //supposed to make project headline bold, fail.
 .textOverImage:first-line {
   color: #fff;
   font-weight: bold;
-  font-size: 2.5em;
+  font-size: 1.5em;
 }
 
 //contact page
@@ -205,12 +199,14 @@ main {
 }
 
 .btn-dark {
+  grid-area: btn-dark;
   @extend .btn;
   background: darken($primary-color, 50);
   color: #fff;
 }
 
 .btn-light {
+  grid-area: btn-light;
   @extend .btn;
   background: lighten($primary-color, 50);
   color: #333;
