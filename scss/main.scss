@@ -136,6 +136,11 @@ main {
   max-width: 100%;
 }
 
+.project-img:hover {
+  transform: scale(1.07);
+  transition: 0.3s;
+}
+
 .card-content {
   grid-area: content;
   text-align: left;
