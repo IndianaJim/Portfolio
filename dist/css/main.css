@@ -122,7 +122,7 @@ h3 {
   h1.lg-heading,
   h2.lg-heading,
   h3.lg-heading {
-    font-size: 6rem; }
+    font-size: 4rem; }
   h1.sm-heading,
   h2.sm-heading,
   h3.sm-heading {
@@ -202,7 +202,10 @@ main {
   grid-area: content;
   text-align: left;
   background: #4b576a;
-  padding: 0.2em; }
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  padding-top: 0px;
+  padding-bottom: 0px; }
   .card-content .card-title {
     text-align: left;
     font-weight: bold; }
@@ -246,16 +249,15 @@ main {
   align-items: center;
   margin-top: 1rem; }
   .boxes div {
-    font-size: 2rem;
+    font-size: 1.4rem;
     border: 3px #fff solid;
-    padding: 1.5rem 2.5rem;
+    padding: 1rem 1.75rem;
     margin-bottom: 3rem; }
 
 .btn, .btn-dark, .btn-light {
   display: block;
   padding: 0.5rem 1rem;
-  border: 0;
-  margin-bottom: 0.3rem; }
+  border: 0; }
   .btn:hover, .btn-dark:hover, .btn-light:hover {
     background: #43c6fa;
     color: #000; }
