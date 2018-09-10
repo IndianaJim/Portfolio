@@ -98,7 +98,7 @@ body {
   color: #fff;
   height: 100%;
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
   body#bg-img {
     background: url(../img/background.jpg);
@@ -160,7 +160,7 @@ main {
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: "bioimage bio bio" "job1 job2 job3";
+  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
   grid-template-columns: repeat(3, 1fr); }
   .about-info .bio-image {
     grid-area: bioimage;
@@ -185,14 +185,14 @@ main {
   display: grid;
   grid-gap: 0.7rem;
   grid-template-columns: 1fr;
-  grid-template-areas: "project-card";
+  grid-template-areas: 'project-card';
   min-width: 250px; }
 
 .project-card {
   display: grid;
   grid-gap: 0.6rem;
   grid-template-columns: 1fr;
-  grid-template-areas: "project-img" "content" "btn-light" "btn-dark"; }
+  grid-template-areas: 'project-img' 'content' 'btn-light' 'btn-dark'; }
 
 .project-img {
   grid-area: project-img;
@@ -283,6 +283,14 @@ main {
   background: #16191f;
   color: #fff;
   height: 60px; }
+
+#map {
+  height: 400px;
+  width: 100%;
+  margin-top: 1.2rem; }
+
+.info-window {
+  color: black; }
 
 @media screen and (min-width: 1171px) {
   .projects {

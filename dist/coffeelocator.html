@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Jim's Coffee Locator</title>
+</head>
+
+<body>
+  <header>
+    <div class="menu-btn">
+      <div class="btn-line"></div>
+      <div class="btn-line"></div>
+      <div class="btn-line"></div>
+    </div>
+
+    <nav class="menu">
+      <div class="menu-branding">
+        <div class="portrait"></div>
+      </div>
+      <ul class="menu-nav">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">
+            Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link">
+            About Me
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="work.html" class="nav-link">
+            My Work
+          </a>
+        </li>
+        <li class="nav-item current">
+          <a href="coffeelocator.html" class="nav-link">
+            Coffee Locator
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">
+            Contact Me
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <h1>Coffee Locator</h1>
+
+  <div id="map"></div>
+
+  <script>
+    var map;
+    var infoWindow;
+
+    var request;
+    var service;
+    var markers = [];
+
+    function initMap() {
+      var center = new google.maps.LatLng(39.890454, -86.031845);
+      var options = {
+        zoom: 11,
+        center: center
+      }
+      map = new google.maps.Map(document.getElementById('map'), options);
+
+      request = {
+        location: center,
+        radius: 8047,
+        types: ['cafe']
+      };
+      infoWindow = new google.maps.InfoWindow();
+
+      service = new google.maps.places.PlacesService(map);
+
+      service.nearbySearch(request, callback);
+
+      google.maps.event.addListener(map, 'rightclick', function (event) {
+        map.setCenter(event.latLng);
+        clearResults(markers);
+        var request = {
+          location: event.latLng,
+          radius: 8047,
+          types: ['cafe']
+        };
+        service.nearbySearch(request, callback);
+
+      });
+
+    }//end initMap
+
+    function callback(results, status) {
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+          markers.push(addMarker(results[i]));
+        }
+      }
+    }
+
+    function addMarker(place) {
+      var placeLoc = place.geometry.location;
+      var icon = {
+        url: 'img/cafeicon1.png',
+        scaledSize: new google.maps.Size(45, 60)
+      };
+      var marker = new google.maps.Marker({
+        position: place.geometry.location,
+        animation: google.maps.Animation.DROP,
+        map: map,
+        icon: icon
+      });
+
+      google.maps.event.addListener(marker, 'click', function () {
+        infoWindow.setContent('<div class="info-window"><strong>' + place.name + '</strong><br>' +
+          '<p>' + 'open now: ' + place.opening_hours.open_now + '</p>' +
+          '<p>' + 'rating: ' + place.rating + ' of 5' + '</p>' +
+          '</div>');
+        infoWindow.open(map, this);
+      });
+
+      return marker;
+    }
+
+    function clearResults(markers) {
+      for (var m in markers) {
+        markers[m].setMap(null);
+      }
+      markers = [];
+    }
+
+  </script>
+  <h4>Click icon for info, and right-click new spot to locate coffee in 5 mile radius...</h4>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCKyzkwzbkB3tPezzkXFXZB7wIDYZBR2_k&callback=initMap"
+    async defer></script>
+  <!-- fyi: API key restricted to just my IP address as requesting source -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

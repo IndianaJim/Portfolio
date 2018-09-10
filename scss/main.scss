@@ -1,5 +1,5 @@
-@import "config";
-@import "menu";
+@import 'config';
+@import 'menu';
 
 * {
   box-sizing: border-box;
@@ -11,7 +11,7 @@ body {
   color: set-text-color($primary-color);
   height: 100%;
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
 }
 
@@ -76,8 +76,8 @@ main {
   display: grid;
   grid-gap: 30px;
   grid-template-areas:
-    "bioimage bio bio"
-    "job1 job2 job3";
+    'bioimage bio bio'
+    'job1 job2 job3';
   grid-template-columns: repeat(3, 1fr);
 
   .bio-image {
@@ -116,7 +116,7 @@ main {
   display: grid;
   grid-gap: 0.7rem;
   grid-template-columns: 1fr;
-  grid-template-areas: "project-card";
+  grid-template-areas: 'project-card';
   min-width: 250px;
 }
 
@@ -125,10 +125,10 @@ main {
   grid-gap: 0.6rem;
   grid-template-columns: 1fr;
   grid-template-areas:
-    "project-img"
-    "content"
-    "btn-light"
-    "btn-dark";
+    'project-img'
+    'content'
+    'btn-light'
+    'btn-dark';
 }
 
 .project-img {
@@ -246,4 +246,14 @@ main {
   height: 60px;
 }
 
-@import "mobile";
+#map {
+  height: 400px;
+  width: 100%;
+  margin-top: 1.2rem;
+}
+
+.info-window {
+  color: black;
+}
+
+@import 'mobile';
